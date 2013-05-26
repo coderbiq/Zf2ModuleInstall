@@ -1,5 +1,5 @@
 {
-    "name": "elvis-bi/zf2-modult-install",
+    "name": "elvis-bi/zf2-module-install",
     "description": "提供zf2模块的composer安装",
     "type": "composer-installer",
     "license": "MIT",
