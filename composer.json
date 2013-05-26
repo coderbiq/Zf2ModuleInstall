@@ -1,0 +1,21 @@
+{
+    "name": "elvis-bi/zf2-modult-install",
+    "description": "提供zf2模块的composer安装",
+    "type": "composer-installer",
+    "license": "MIT",
+    "keywords": [
+        "zf2",
+        "module install"
+    ],
+    "homepage": "https://github.com/elvis-bi/Zf2ModuleInstall",
+    "authors": [
+        {
+            "name": "Elvis Bi",
+            "email": "elvis@dwenzi.com",
+            "homepage": "http://www.dwenzi.com/"
+        }
+    ],
+    "autoload": {
+        "psr-0": { "Zf2ModuleInstall": "src/" }
+    }
+}
