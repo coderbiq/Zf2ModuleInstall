@@ -18,7 +18,7 @@ class ComposerInstaller extends LibraryInstaller
     public function getInstallPath(PackageInterface $package)
     {
         $moduleName = $this->getModuleName($package->getName());
-        return "module/".implode('', $names);
+        return "module/" . $moduleName;
     }
 
     public function supports($packageType)
@@ -26,13 +26,14 @@ class ComposerInstaller extends LibraryInstaller
         return $packageType == 'zf2-module';
     }
 
-    protected registerModule($moduleName)
+    protected function registerModule($moduleName)
     {
-        $applicationConfigFile = 'config/application.config.php';
+        $applicationConfigFile = $this->vendorDir 
+            . '/../config/application.config.php';
         if(file_exists($applicationConfigFile)) {
             $config = file_get_contents($applicationConfigFile);
             $config = preg_replace(
-                '/(\'modules\'\s\=\>\sarray\([^\)]*)(\))/', 
+                '/(\'modules\'\s?\=\>\s?array\([^\)]*)(\))/', 
                 sprintf("$1\r\n        '%s',)", $moduleName), 
                 $config);
             file_put_contents($applicationConfigFile, $config);
